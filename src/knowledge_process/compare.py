@@ -119,7 +119,7 @@ def extract_text(record: Dict) -> str:
 
 def embed_queries(queries: List[str], model_dir: Path, device: torch.device, max_length: int = 128) -> np.ndarray:
     tokenizer = AutoTokenizer.from_pretrained(model_dir)
-    model = AutoModel.from_pretrained(model_dir).to(device)
+    model = AutoModel.from_pretrained(model_dir, add_pooling_layer=False).to(device)
     model.eval()
 
     vecs: List[np.ndarray] = []

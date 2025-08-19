@@ -202,7 +202,7 @@ def main():
     # 載入模型
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     tokenizer = AutoTokenizer.from_pretrained(model_dir)
-    model = AutoModel.from_pretrained(model_dir)
+    model = AutoModel.from_pretrained(model_dir, add_pooling_layer=False).to(device)
     model.to(device)
 
     # 讀取 JSONL

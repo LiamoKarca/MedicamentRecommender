@@ -1,6 +1,6 @@
 """
-pipeline.py — 專案整合管線
 依序執行：
+- python src/pipeline.py
 1) 若向量檔缺失或 --force，執行 src/knowledge_process/vector_conversion.py
 2) src/question_extraction.py
 3) src/knowledge_process/compare.py
